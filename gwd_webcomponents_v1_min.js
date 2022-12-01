@@ -1,35 +1,5 @@
-/*
-
- Copyright The Closure Library Authors.
- SPDX-License-Identifier: Apache-2.0
-*/
-/*
-
- Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
- This code may only be used under the BSD style license found at
- http://polymer.github.io/LICENSE.txt The complete set of authors may be found
- at http://polymer.github.io/AUTHORS.txt The complete set of contributors may
- be found at http://polymer.github.io/CONTRIBUTORS.txt Code distributed by
- Google as part of the polymer project is also subject to an additional IP
- rights grant found at http://polymer.github.io/PATENTS.txt
-*/
 (function(){if(void 0!==window.Reflect&&void 0!==window.customElements&&!window.customElements.polyfillWrapFlushCallback){var BuiltInHTMLElement=HTMLElement;window.HTMLElement=function(){return Reflect.construct(BuiltInHTMLElement,[],this.constructor)};HTMLElement.prototype=BuiltInHTMLElement.prototype;HTMLElement.prototype.constructor=HTMLElement;Object.setPrototypeOf(HTMLElement,BuiltInHTMLElement)}})();
-(function(){/*
-
- Copyright The Closure Library Authors.
- SPDX-License-Identifier: Apache-2.0
-*/
-var m;function n(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b};/*
-
- Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
- This code may only be used under the BSD style license found at
- http://polymer.github.io/LICENSE.txt The complete set of authors may be found
- at http://polymer.github.io/AUTHORS.txt The complete set of contributors may
- be found at http://polymer.github.io/CONTRIBUTORS.txt Code distributed by
- Google as part of the polymer project is also subject to an additional IP
- rights grant found at http://polymer.github.io/PATENTS.txt
-*/
-var p=window.Document.prototype.createElement,q=window.Document.prototype.createElementNS,aa=window.Document.prototype.importNode,ba=window.Document.prototype.prepend,ca=window.Document.prototype.append,da=window.DocumentFragment.prototype.prepend,ea=window.DocumentFragment.prototype.append,t=window.Node.prototype.cloneNode,u=window.Node.prototype.appendChild,v=window.Node.prototype.insertBefore,w=window.Node.prototype.removeChild,x=window.Node.prototype.replaceChild,z=Object.getOwnPropertyDescriptor(window.Node.prototype,
+(function(){var m;function n(){for(var a=Number(this),b=[],c=a;c<arguments.length;c++)b[c-a]=arguments[c];return b};var p=window.Document.prototype.createElement,q=window.Document.prototype.createElementNS,aa=window.Document.prototype.importNode,ba=window.Document.prototype.prepend,ca=window.Document.prototype.append,da=window.DocumentFragment.prototype.prepend,ea=window.DocumentFragment.prototype.append,t=window.Node.prototype.cloneNode,u=window.Node.prototype.appendChild,v=window.Node.prototype.insertBefore,w=window.Node.prototype.removeChild,x=window.Node.prototype.replaceChild,z=Object.getOwnPropertyDescriptor(window.Node.prototype,
 "textContent"),A=window.Element.prototype.attachShadow,B=Object.getOwnPropertyDescriptor(window.Element.prototype,"innerHTML"),C=window.Element.prototype.getAttribute,D=window.Element.prototype.setAttribute,E=window.Element.prototype.removeAttribute,F=window.Element.prototype.getAttributeNS,G=window.Element.prototype.setAttributeNS,H=window.Element.prototype.removeAttributeNS,fa=window.Element.prototype.insertAdjacentElement,ha=window.Element.prototype.insertAdjacentHTML,ia=window.Element.prototype.prepend,
 ja=window.Element.prototype.append,ka=window.Element.prototype.before,la=window.Element.prototype.after,ma=window.Element.prototype.replaceWith,na=window.Element.prototype.remove,oa=window.HTMLElement,I=Object.getOwnPropertyDescriptor(window.HTMLElement.prototype,"innerHTML"),pa=window.HTMLElement.prototype.insertAdjacentElement,qa=window.HTMLElement.prototype.insertAdjacentHTML;var ra=function(){var a=new Set;"annotation-xml color-profile font-face font-face-src font-face-uri font-face-format font-face-name missing-glyph".split(" ").forEach(function(b){return a.add(b)});return a}();function sa(a){var b=ra.has(a);a=/^[a-z][.0-9_a-z]*-[-.0-9_a-z]*$/.test(a);return!b&&a}var ta=document.contains?document.contains.bind(document):document.documentElement.contains.bind(document.documentElement);
 function J(a){var b=a.isConnected;if(void 0!==b)return b;if(ta(a))return!0;for(;a&&!(a.__CE_isImportDocument||a instanceof Document);)a=a.parentNode||(window.ShadowRoot&&a instanceof ShadowRoot?a.host:void 0);return!(!a||!(a.__CE_isImportDocument||a instanceof Document))}function K(a){var b=a.children;if(b)return Array.prototype.slice.call(b);b=[];for(a=a.firstChild;a;a=a.nextSibling)a.nodeType===Node.ELEMENT_NODE&&b.push(a);return b}
@@ -61,14 +31,5 @@ pa?c(HTMLElement.prototype,pa):fa&&c(Element.prototype,fa);qa?e(HTMLElement.prot
 Object.setPrototypeOf(g,c.prototype);Q(a,g);return g}b.prototype=oa.prototype;Object.defineProperty(HTMLElement.prototype,"constructor",{writable:!0,configurable:!0,enumerable:!1,value:b});window.HTMLElement=b};function Ga(a){function b(c,e){Object.defineProperty(c,"textContent",{enumerable:e.enumerable,configurable:!0,get:e.get,set:function(d){if(this.nodeType===Node.TEXT_NODE)e.set.call(this,d);else{var f=void 0;if(this.firstChild){var g=this.childNodes,h=g.length;if(0<h&&J(this)){f=Array(h);for(var k=0;k<h;k++)f[k]=g[k]}}e.set.call(this,d);if(f)for(d=0;d<f.length;d++)T(a,f[d])}}})}Node.prototype.insertBefore=function(c,e){if(c instanceof DocumentFragment){var d=K(c);c=v.call(this,c,e);if(J(this))for(e=
 0;e<d.length;e++)R(a,d[e]);return c}d=c instanceof Element&&J(c);e=v.call(this,c,e);d&&T(a,c);J(this)&&R(a,c);return e};Node.prototype.appendChild=function(c){if(c instanceof DocumentFragment){var e=K(c);c=u.call(this,c);if(J(this))for(var d=0;d<e.length;d++)R(a,e[d]);return c}e=c instanceof Element&&J(c);d=u.call(this,c);e&&T(a,c);J(this)&&R(a,c);return d};Node.prototype.cloneNode=function(c){c=t.call(this,!!c);this.ownerDocument.__CE_registry?U(a,c):P(a,c);return c};Node.prototype.removeChild=function(c){var e=
 c instanceof Element&&J(c),d=w.call(this,c);e&&T(a,c);return d};Node.prototype.replaceChild=function(c,e){if(c instanceof DocumentFragment){var d=K(c);c=x.call(this,c,e);if(J(this))for(T(a,e),e=0;e<d.length;e++)R(a,d[e]);return c}d=c instanceof Element&&J(c);var f=x.call(this,c,e),g=J(this);g&&T(a,e);d&&T(a,c);g&&R(a,c);return f};z&&z.get?b(Node.prototype,z):va(a,function(c){b(c,{enumerable:!0,configurable:!0,get:function(){for(var e=[],d=this.firstChild;d;d=d.nextSibling)d.nodeType!==Node.COMMENT_NODE&&
-e.push(d.textContent);return e.join("")},set:function(e){for(;this.firstChild;)w.call(this,this.firstChild);null!=e&&""!==e&&u.call(this,document.createTextNode(e))}})})};var N=window.customElements;function Ha(){var a=new ua;Fa(a);Ba(a);Z(a,DocumentFragment.prototype,{prepend:da,append:ea});Ga(a);Da(a);a=new Y(a);document.__CE_registry=a;window.CustomElementRegistry=Y;Object.defineProperty(window,"customElements",{configurable:!0,enumerable:!0,value:a})}N&&!N.forcePolyfill&&"function"==typeof N.define&&"function"==typeof N.get||Ha();window.__CE_installPolyfill=Ha;/*
-
-Copyright (c) 2017 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-*/
-})();
+e.push(d.textContent);return e.join("")},set:function(e){for(;this.firstChild;)w.call(this,this.firstChild);null!=e&&""!==e&&u.call(this,document.createTextNode(e))}})})};var N=window.customElements;function Ha(){var a=new ua;Fa(a);Ba(a);Z(a,DocumentFragment.prototype,{prepend:da,append:ea});Ga(a);Da(a);a=new Y(a);document.__CE_registry=a;window.CustomElementRegistry=Y;Object.defineProperty(window,"customElements",{configurable:!0,enumerable:!0,value:a})}N&&!N.forcePolyfill&&"function"==typeof N.define&&"function"==typeof N.get||Ha();window.__CE_installPolyfill=Ha;})();
 (function(){var b=window.document;window.WebComponents=window.WebComponents||{};var a=function(){window.removeEventListener("DOMContentLoaded",a);window.WebComponents.ready=!0;var c=b.createEvent("CustomEvent");c.initEvent("WebComponentsReady",!0,!0);setTimeout(function(){window.document.dispatchEvent(c)},0)};"complete"===b.readyState?a():window.addEventListener("DOMContentLoaded",a)})();
